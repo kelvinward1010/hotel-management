@@ -21,9 +21,9 @@ const links = [
 
 function Header() {
     return (
-        <div className='px-4 py-10 mx-auto bg-teal-600 text-lg flex flex-wrap md:flex-nowrap items-center justify-between'>
+        <div className='px-4 py-7 mx-auto bg-teal-600 text-lg flex flex-wrap md:flex-nowrap items-center justify-between'>
             <div className='flex items-center w-full md:2/3'>
-                <Link href={"/"} className='font-black text-white'>
+                <Link href={"/"} className='text-tertiary-light font-semibold text-lg'>
                     Kelvin Ward
                 </Link>
                 <ul className="flex items-center ml-5">
