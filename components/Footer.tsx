@@ -2,10 +2,26 @@ import { IconMessage2Share, IconPhoneCheck, IconSend } from "@tabler/icons-react
 import Link from "next/link";
 import React from "react";
 
+const titles_1 = [
+    { title: "Our Story" },
+    { title: "Get in Touch" },
+    { title: "Our Privacy Commitment" },
+    { title: "Terms of service" },
+    { title: "Customer Assistance" },
+]
+
+const titles_2 = [
+    { title: "Dining Experience" },
+    { title: "Wellness" },
+    { title: "Fitness" },
+    { title: "Sports" },
+    { title: "Events" },
+]
+
 function Footer() {
     return (
         <footer className="mt-16">
-            <div className="container mx-auto px-4 w-full bg-black">
+            <div className="container mx-auto px-4 w-full bg-black py-5">
                 <Link href={'/'} className="text-tertiary-light font-semibold text-lg">
                     Kelvin Ward
                 </Link>
@@ -28,19 +44,15 @@ function Footer() {
                     </div>
 
                     <div className="flex-1 md:text-right">
-                        <p className="pb-4">Our Story</p>
-                        <p className="pb-4">Get in Touch</p>
-                        <p className="pb-4">Our Privacy Commitment</p>
-                        <p className="pb-4">Terms of service</p>
-                        <p>Customer Assistance</p>
+                        {titles_1.map((title, idx) => (
+                            <p className="pb-4 cursor-pointer hover:-translate-x-3 duration-500" key={idx}>{title.title}</p>
+                        ))}
                     </div>
 
                     <div className="flex-1 md:text-right">
-                        <p className="pb-4">Dining Experience</p>
-                        <p className="pb-4">Wellness</p>
-                        <p className="pb-4">Fitness</p>
-                        <p className="pb-4">Sports</p>
-                        <p>Events</p>
+                        {titles_2.map((title, idx) => (
+                            <p className="pb-4 cursor-pointer duration-500 hover:-translate-x-3" key={idx}>{title.title}</p>
+                        ))}
                     </div>
                 </div>
             </div>
