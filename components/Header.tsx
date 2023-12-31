@@ -1,6 +1,9 @@
-import { IconMoonStars, IconUser } from '@tabler/icons-react'
+"use client"
+
+import ThemeContext from '@/app/context/themeContext'
+import { IconBrightnessUp, IconMoonStars, IconUser } from '@tabler/icons-react'
 import Link from 'next/link'
-import React from 'react'
+import React, { useContext } from 'react'
 
 
 const links = [
@@ -20,6 +23,8 @@ const links = [
 
 
 function Header() {
+    const {darkTheme, setDarkTheme} = useContext(ThemeContext)
+
     return (
         <div className='px-4 py-7 mx-auto bg-teal-600 text-lg flex flex-wrap md:flex-nowrap items-center justify-between'>
             <div className='flex items-center w-full md:2/3'>
@@ -33,7 +38,16 @@ function Header() {
                         </Link>
                     </li>
                     <li className='ml-2'>
-                        <IconMoonStars className='cursor-pointer'/>
+                        {darkTheme == true 
+                            ? <IconMoonStars onClick={() => {
+                                setDarkTheme(false)
+                                localStorage.removeItem("hotel-theme")
+                            }} className='cursor-pointer'/> 
+                            : <IconBrightnessUp onClick={() => {
+                                setDarkTheme(true);
+                                localStorage.setItem("hotel-theme", "true")
+                            }} className='cursor-pointer'/>
+                        }
                     </li>
                 </ul>
             </div>
