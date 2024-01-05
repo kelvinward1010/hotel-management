@@ -21,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={poppins.className}>
+    <html lang="en" suppressHydrationWarning={true} suppressContentEditableWarning={true}>
+      <body className={poppins.className} suppressHydrationWarning={true} suppressContentEditableWarning={true}>
         <main className='font-normal'>
           <Layout>
             {children}

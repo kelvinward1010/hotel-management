@@ -1,6 +1,6 @@
 "use client"
 
-import ThemeContext from '@/app/context/themeContext'
+import ThemeContext from '@/app/(web)/context/themeContext'
 import { IconBrightnessUp, IconMoonStars, IconUser } from '@tabler/icons-react'
 import Link from 'next/link'
 import React, { useContext } from 'react'

@@ -1,6 +1,6 @@
 "use client"
 
-import ThemeContext from "@/app/context/themeContext";
+import ThemeContext from "@/app/(web)/context/themeContext";
 import { useEffect, useState } from "react"
 
 const ThemeProvider = ({children}: {children: React.ReactNode}) => {
@@ -19,7 +19,7 @@ const ThemeProvider = ({children}: {children: React.ReactNode}) => {
     return (
         <ThemeContext.Provider value={{darkTheme, setDarkTheme}}>
             <div className={`${darkTheme ? "dark" : ""} min-h-screen`}>
-                <div className={`dark:text-white dark:bg-black text-white`}>
+                <div className={`dark:text-white dark:bg-black text-black`}>
                     {children}
                 </div>
             </div> 
